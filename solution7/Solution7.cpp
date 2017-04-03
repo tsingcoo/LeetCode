@@ -6,12 +6,12 @@
 
 int Solution7::reverse(int x) {
 
-    int reverseNum = 0;
+    long reverseNum = 0;
 
     while (x != 0) {
         reverseNum = reverseNum * 10 + x % 10;
         x /= 10;
     }
 
-    return reverseNum;
+    return ((int) reverseNum == reverseNum) * reverseNum;
 }
