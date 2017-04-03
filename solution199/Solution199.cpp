@@ -18,17 +18,14 @@ std::vector<int> Solution199::rightSideView(TreeNode *root) {
 void Solution199::helper(TreeNode *root, int row) {
     if (root == nullptr) {
         return;
-    }
-    if (root->left != nullptr) {
+    } else {
         if (res.size() < row + 1) {
             res.push_back(root->val);
+        } else {
+            res[row] = root->val;
         }
-        res[row] = root->val;
+
     }
-    if (root->right != nullptr) {
-        if (res.size() < row + 1) {
-            res.push_back(root->val);
-        }
-        res[row] = root->val;
-    }
+    helper(root->left, row + 1);
+    helper(root->right, row + 1);
 }
