@@ -8,13 +8,10 @@ int Solution7::reverse(int x) {
 
     int reverseNum = 0;
 
-    int q = 0;
-    q = (x < 0 ? -1 : 1);
-
     while (x != 0) {
         reverseNum = reverseNum * 10 + x % 10;
         x /= 10;
     }
 
-    return reverseNum * q;
+    return reverseNum;
 }
